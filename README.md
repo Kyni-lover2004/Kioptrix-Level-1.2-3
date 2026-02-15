@@ -63,7 +63,8 @@ Further research indicates a known Remote Code Execution vulnerability exploitab
 Download the exploit:
 
 ```bash
-wget <exploit_source_url>
+wget <LotusCMS-Exploit>
+
 ```
 
 Make it executable:
@@ -253,10 +254,3 @@ Kioptrix 1.2 (#3) demonstrates:
 - Reverse shell handling and stabilization
 - Kernel-based privilege escalation (Dirty COW)
 - Post-exploitation persistence via SSH
-
-This machine highlights the importance of:
-
-- Keeping web applications patched
-- Avoiding outdated kernel versions
-- Applying proper privilege separation
-- Regular system updates
