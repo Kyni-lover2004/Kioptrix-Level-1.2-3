@@ -13,7 +13,7 @@
 We begin by identifying the target machine on the local network.
 
 ```bash
-sudo netdiscover
+sudo netdiscover -r 192.168.56.0/24
 ```
 
 From the output, we identify the target IP address:
